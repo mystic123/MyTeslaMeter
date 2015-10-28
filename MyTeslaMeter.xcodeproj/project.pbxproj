@@ -12,6 +12,7 @@
 		4A3067EE1BC6C75700FA8A47 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4A3067EC1BC6C75700FA8A47 /* Main.storyboard */; };
 		4A3067F01BC6C75700FA8A47 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4A3067EF1BC6C75700FA8A47 /* Assets.xcassets */; };
 		4A3067F31BC6C75700FA8A47 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4A3067F11BC6C75700FA8A47 /* LaunchScreen.storyboard */; };
+		4A48F8D11BD8F35F0048AA65 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A48F8D01BD8F35F0048AA65 /* SettingsViewController.swift */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +26,7 @@
 		4A3067FA1BC6C7B400FA8A47 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		4A3067FC1BC6C7D100FA8A47 /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = System/Library/Frameworks/CoreFoundation.framework; sourceTree = SDKROOT; };
 		4A3067FD1BC6C7D100FA8A47 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		4A48F8D01BD8F35F0048AA65 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +62,7 @@
 		4A3067E71BC6C75700FA8A47 /* MyTeslaMeter */ = {
 			isa = PBXGroup;
 			children = (
+				4A48F8D01BD8F35F0048AA65 /* SettingsViewController.swift */,
 				4A3067E81BC6C75700FA8A47 /* AppDelegate.swift */,
 				4A3067EA1BC6C75700FA8A47 /* ViewController.swift */,
 				4A3067EC1BC6C75700FA8A47 /* Main.storyboard */,
@@ -143,6 +146,7 @@
 			files = (
 				4A3067EB1BC6C75700FA8A47 /* ViewController.swift in Sources */,
 				4A3067E91BC6C75700FA8A47 /* AppDelegate.swift in Sources */,
+				4A48F8D11BD8F35F0048AA65 /* SettingsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
