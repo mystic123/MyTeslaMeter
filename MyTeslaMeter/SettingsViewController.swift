@@ -19,7 +19,7 @@ class SettingsViewController: UITableViewController, UIPickerViewDataSource, UIP
 	@IBOutlet weak var yAxisColorPicker: UIPickerView!
 	@IBOutlet weak var zAxisColorPicker: UIPickerView!
 	
-	private let frequencyPickerData = [0.5, 1, 5, 10, 20, 50, 100]
+	private let frequencyPickerData = [0.5, 1, 5, 10, 20, 50]
 	
 	private let defaults = NSUserDefaults.standardUserDefaults()
 	
@@ -33,10 +33,14 @@ class SettingsViewController: UITableViewController, UIPickerViewDataSource, UIP
 		"magenta":	UIColor.magentaColor(),
 		"purple": UIColor.purpleColor()
 	]
+
+	var mainViewController: MainViewController?
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		// Do view setup here.
+		
+		mainViewController = self.tabBarController?.viewControllers?[0] as? MainViewController
 		
 		let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: "hideKeyboard")
 		tapGestureRecognizer.cancelsTouchesInView = false
@@ -96,14 +100,23 @@ class SettingsViewController: UITableViewController, UIPickerViewDataSource, UIP
 	func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
 		if pickerView == frequencyPicker {
 			defaults.setInteger(row, forKey: "frequency")
+			mainViewController?.magneto.frequency = frequencyPickerData[row]
+			print("setting frequency value: ", frequencyPickerData[row])
 		} else if pickerView == xAxisColorPicker || pickerView == yAxisColorPicker || pickerView == zAxisColorPicker {
 			var key = ""
+			let colorsArray = [UIColor](colors.values)
 			if pickerView == xAxisColorPicker {
 				key = "xAxisColor"
+				mainViewController?.xLineColor = colorsArray[row]
+				print("setting x axis color: ", colorsArray[row])
 			} else if pickerView == yAxisColorPicker {
 				key = "yAxisColor"
+				mainViewController?.yLineColor = colorsArray[row]
+				print("setting y axis color: ", colorsArray[row])
 			} else if pickerView == zAxisColorPicker {
 				key = "zAxisColor"
+				mainViewController?.zLineColor = colorsArray[row]
+				print("setting z axis color: ", colorsArray[row])
 			}
 			defaults.setInteger(row, forKey: key)
 		}
@@ -118,6 +131,7 @@ class SettingsViewController: UITableViewController, UIPickerViewDataSource, UIP
 	func textFieldDidEndEditing(textField: UITextField) {
 		if textField == serverIPField {
 			defaults.setObject(serverIPField.text!, forKey: "serverIP")
+			mainViewController?.serverIP = serverIPField.text!
 		} else if textField == deviceNameField {
 			defaults.setObject(deviceNameField.text!, forKey: "deviceName")
 		}

@@ -29,9 +29,9 @@ extension Double {
 	}
 }
 
-class ViewController: UIViewController, ChartViewDelegate {
-	
-	@IBOutlet weak var xLabel: UILabel!
+class  MainViewController: UIViewController, ChartViewDelegate {
+		@IBOutlet weak var xLabel: UILabel!
+
 	@IBOutlet weak var yLabel: UILabel!
 	@IBOutlet weak var zLabel: UILabel!
 	@IBOutlet weak var magneticHeadingLabel: UILabel!
@@ -47,7 +47,41 @@ class ViewController: UIViewController, ChartViewDelegate {
     
     var counter = 0
     var dataEntries: [ChartDataEntry] = []
-    
+	
+	var serverIP = "0.0.0.0"
+	
+	var xLineColor: UIColor? {
+		get {
+			let dataSet = lineChartView.data!.dataSets[0] as! LineChartDataSet
+			return dataSet.colorAt(dataSet.entryCount-1)
+		}
+		set {
+			let dataSet = lineChartView.data!.dataSets[0] as! LineChartDataSet
+			dataSet.setColor(newValue!)
+		}
+	}
+	
+	var yLineColor: UIColor? {
+		get {
+			let dataSet = lineChartView.data!.dataSets[1] as! LineChartDataSet
+			return dataSet.colorAt(dataSet.entryCount-1)
+		}
+		set {
+			let dataSet = lineChartView.data!.dataSets[1] as! LineChartDataSet
+			dataSet.setColor(newValue!)
+		}
+	}
+	var zLineColor: UIColor? {
+		get {
+			let dataSet = lineChartView.data!.dataSets[2] as! LineChartDataSet
+			return dataSet.colorAt(dataSet.entryCount-1)
+		}
+		set {
+			let dataSet = lineChartView.data!.dataSets[2] as! LineChartDataSet
+			dataSet.setColor(newValue!)
+		}
+	}
+	
 	//var lastSampleTime: UInt64 = 0
 	//var timeBaseInfo : mach_timebase_info = mach_timebase_info(numer: 0, denom: 0)
     
