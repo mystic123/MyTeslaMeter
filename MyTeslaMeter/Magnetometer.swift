@@ -16,6 +16,10 @@ import CoreMotion
 class Magnetometer {
     private let motionManager = CMMotionManager()
     
+    init() {
+        motionManager.showsDeviceMovementDisplay = true
+    }
+    
     var frequency: Double {
         set {
             motionManager.deviceMotionUpdateInterval = newValue
@@ -27,18 +31,35 @@ class Magnetometer {
     
     func start(handler: (motion: CMDeviceMotion?) -> Void) {
         print("start from magnetometer")
-        motionManager.startDeviceMotionUpdatesUsingReferenceFrame(CMAttitudeReferenceFrame.XMagneticNorthZVertical, toQueue: NSOperationQueue.mainQueue()) {
+        motionManager.startDeviceMotionUpdatesUsingReferenceFrame(CMAttitudeReferenceFrame.XMagneticNorthZVertical, toQueue: NSOperationQueue.init()) {
             data, error in
             if let _ = error {
-                print("error")
+                print("error", error)
             } else {
-                handler(motion: data)
+                NSOperationQueue.mainQueue().addOperationWithBlock {
+                    handler(motion: data)
+                }
             }
         }
     }
     
+    func startBiased(handler: (motion: CMMagnetometerData?) -> Void) {
+        print("start from magnetometer biased")
+        motionManager.startMagnetometerUpdatesToQueue(NSOperationQueue.init()) {
+            data, error in
+            if let _ = error {
+                print("error biased", error)
+            } else {
+                NSOperationQueue.mainQueue().addOperationWithBlock {
+                    handler(motion: data)
+                }
+            }
+        }
+    }
+
+    
     func stop() {
-        print("stop from magnetometer")
         motionManager.stopDeviceMotionUpdates()
+        motionManager.stopMagnetometerUpdates()
     }
 }
