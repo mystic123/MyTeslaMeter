@@ -12,8 +12,56 @@
 		4A3067EE1BC6C75700FA8A47 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4A3067EC1BC6C75700FA8A47 /* Main.storyboard */; };
 		4A3067F01BC6C75700FA8A47 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4A3067EF1BC6C75700FA8A47 /* Assets.xcassets */; };
 		4A3067F31BC6C75700FA8A47 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4A3067F11BC6C75700FA8A47 /* LaunchScreen.storyboard */; };
-		4A48F8D11BD8F35F0048AA65 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A48F8D01BD8F35F0048AA65 /* SettingsViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		4A48F8D11BD8F35F0048AA65 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A48F8D01BD8F35F0048AA65 /* SettingsViewController.swift */; };
+		EF25C7011BE15590007C8E24 /* Magnetometer.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF25C7001BE15590007C8E24 /* Magnetometer.swift */; };
+		EF25C70E1BE533C8007C8E24 /* Charts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EF25C7091BE20C39007C8E24 /* Charts.framework */; };
+		EF25C70F1BE533C8007C8E24 /* Charts.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = EF25C7091BE20C39007C8E24 /* Charts.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		EF25C7081BE20C39007C8E24 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EF25C7021BE20C39007C8E24 /* Charts.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 5BA8EC401A9D14DC00CE82E1;
+			remoteInfo = "Charts-iOS";
+		};
+		EF25C70A1BE20C39007C8E24 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EF25C7021BE20C39007C8E24 /* Charts.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = A52C5C371BAC5CA400594CDD;
+			remoteInfo = "Charts-TV";
+		};
+		EF25C70C1BE20C39007C8E24 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EF25C7021BE20C39007C8E24 /* Charts.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 06AEE7A21BDC3F8B009875AE;
+			remoteInfo = ChartsTests;
+		};
+		EF25C7101BE533C8007C8E24 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EF25C7021BE20C39007C8E24 /* Charts.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 5BA8EC3F1A9D14DC00CE82E1;
+			remoteInfo = "Charts-iOS";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		EF25C7121BE533C8007C8E24 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				EF25C70F1BE533C8007C8E24 /* Charts.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		4A3067E51BC6C75700FA8A47 /* MyTeslaMeter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyTeslaMeter.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -27,6 +75,8 @@
 		4A3067FC1BC6C7D100FA8A47 /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = System/Library/Frameworks/CoreFoundation.framework; sourceTree = SDKROOT; };
 		4A3067FD1BC6C7D100FA8A47 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		4A48F8D01BD8F35F0048AA65 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		EF25C7001BE15590007C8E24 /* Magnetometer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Magnetometer.swift; sourceTree = "<group>"; };
+		EF25C7021BE20C39007C8E24 /* Charts.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Charts.xcodeproj; path = chartsIos/Charts/Charts.xcodeproj; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -34,6 +84,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EF25C70E1BE533C8007C8E24 /* Charts.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -43,6 +94,7 @@
 		4A3067DC1BC6C75700FA8A47 = {
 			isa = PBXGroup;
 			children = (
+				EF25C7021BE20C39007C8E24 /* Charts.xcodeproj */,
 				4A3067FC1BC6C7D100FA8A47 /* CoreFoundation.framework */,
 				4A3067FD1BC6C7D100FA8A47 /* Foundation.framework */,
 				4A3067FA1BC6C7B400FA8A47 /* CoreLocation.framework */,
@@ -65,12 +117,23 @@
 				4A48F8D01BD8F35F0048AA65 /* SettingsViewController.swift */,
 				4A3067E81BC6C75700FA8A47 /* AppDelegate.swift */,
 				4A3067EA1BC6C75700FA8A47 /* ViewController.swift */,
+				EF25C7001BE15590007C8E24 /* Magnetometer.swift */,
 				4A3067EC1BC6C75700FA8A47 /* Main.storyboard */,
 				4A3067EF1BC6C75700FA8A47 /* Assets.xcassets */,
 				4A3067F11BC6C75700FA8A47 /* LaunchScreen.storyboard */,
 				4A3067F41BC6C75700FA8A47 /* Info.plist */,
 			);
 			path = MyTeslaMeter;
+			sourceTree = "<group>";
+		};
+		EF25C7031BE20C39007C8E24 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				EF25C7091BE20C39007C8E24 /* Charts.framework */,
+				EF25C70B1BE20C39007C8E24 /* Charts.framework */,
+				EF25C70D1BE20C39007C8E24 /* ChartsTests.xctest */,
+			);
+			name = Products;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -83,10 +146,12 @@
 				4A3067E11BC6C75700FA8A47 /* Sources */,
 				4A3067E21BC6C75700FA8A47 /* Frameworks */,
 				4A3067E31BC6C75700FA8A47 /* Resources */,
+				EF25C7121BE533C8007C8E24 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				EF25C7111BE533C8007C8E24 /* PBXTargetDependency */,
 			);
 			name = MyTeslaMeter;
 			productName = MyTeslaMeter;
@@ -104,7 +169,7 @@
 				TargetAttributes = {
 					4A3067E41BC6C75700FA8A47 = {
 						CreatedOnToolsVersion = 7.0;
-						DevelopmentTeam = PAVNY5TAN8;
+						DevelopmentTeam = QASWA68JWR;
 					};
 				};
 			};
@@ -119,12 +184,42 @@
 			mainGroup = 4A3067DC1BC6C75700FA8A47;
 			productRefGroup = 4A3067E61BC6C75700FA8A47 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = EF25C7031BE20C39007C8E24 /* Products */;
+					ProjectRef = EF25C7021BE20C39007C8E24 /* Charts.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				4A3067E41BC6C75700FA8A47 /* MyTeslaMeter */,
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		EF25C7091BE20C39007C8E24 /* Charts.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = Charts.framework;
+			remoteRef = EF25C7081BE20C39007C8E24 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		EF25C70B1BE20C39007C8E24 /* Charts.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = Charts.framework;
+			remoteRef = EF25C70A1BE20C39007C8E24 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		EF25C70D1BE20C39007C8E24 /* ChartsTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = ChartsTests.xctest;
+			remoteRef = EF25C70C1BE20C39007C8E24 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		4A3067E31BC6C75700FA8A47 /* Resources */ = {
@@ -145,12 +240,21 @@
 			buildActionMask = 2147483647;
 			files = (
 				4A3067EB1BC6C75700FA8A47 /* ViewController.swift in Sources */,
+				EF25C7011BE15590007C8E24 /* Magnetometer.swift in Sources */,
 				4A3067E91BC6C75700FA8A47 /* AppDelegate.swift in Sources */,
 				4A48F8D11BD8F35F0048AA65 /* SettingsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		EF25C7111BE533C8007C8E24 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "Charts-iOS";
+			targetProxy = EF25C7101BE533C8007C8E24 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		4A3067EC1BC6C75700FA8A47 /* Main.storyboard */ = {
@@ -257,10 +361,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				INFOPLIST_FILE = MyTeslaMeter/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = pkapica.MyTeslaMeter;
+				PRODUCT_BUNDLE_IDENTIFIER = mzalewska.MyTeslaMeter;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -268,10 +376,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				INFOPLIST_FILE = MyTeslaMeter/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = pkapica.MyTeslaMeter;
+				PRODUCT_BUNDLE_IDENTIFIER = mzalewska.MyTeslaMeter;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};

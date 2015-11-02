@@ -64,3 +64,5 @@ SwiftyJSON/
 
 #other
 *~
+chartsIos/
+.DS_Store
